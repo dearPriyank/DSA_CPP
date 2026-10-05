@@ -1,20 +1,22 @@
 #include<iostream>
 using namespace std;
 int main() {
-    int n;
+    int N;
     cout<<"enter n:";
-    cin>>n;
-    bool is_it;
-    for(int i=2;i<=n-1;i++) {
-        if(n%i==0) {
-            is_it=true;
+    cin>>N;
+    bool is_it_prime=true; 
+    for(int i=2;i*i<=N;i++) {
+        if(N%i==0) {
+            is_it_prime=false;
             break;
         }
-     } if(n==1) 
+     } if(N==1) {
      cout<<"number is niether prime nor composite"; 
-    else if(is_it==true)
-    cout<<"composite number";
-    else {
-        cout<<"prime number";
+    
+    } else if(is_it_prime==false){
+    cout<<N<<" is a composite number";
+    
+    } else {
+        cout<<N<<" is a prime number";
     }
 }
